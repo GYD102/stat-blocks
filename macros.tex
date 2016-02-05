@@ -1,0 +1,72 @@
+\usepackage{fp}
+\usepackage{ifthen}
+
+\newcommand{\blockname}[1]{}
+
+\newcommand\tempval{0}
+
+\newcommand{\mod}[1]{
+  \ifthenelse{#1 > 9}
+  {\FPeval\result{trunc((#1/2-5):0)}(+\result)}
+  {\FPeval\result{round((#1/2-5):0)}(\result)}
+}
+
+\newcommand{\settemp}[1]{
+  \ifthenelse{#1 < 0}
+  {\renewcommand{\tempval}{0#1}}
+  {\renewcommand{\tempval}{#1}}
+}
+
+\newcommand{\pmz}[1]{
+  \ifthenelse{#1 = 0}
+  {\hspace{-3pt}}{\ifthenelse{#1 > 0}{+ #1}{#1}}
+}
+
+\newcommand{\stats}[6]{
+  \begin{tabular}{ c c c c c c }
+  \bfseries{STR} & \bfseries{DEX} & \bfseries{CON} & \bfseries{INT} & \bfseries{WIS} & \bfseries{CHA} \\
+  #1\mod{#1}&#2\mod{#2}&#3\mod{#3}&#4\mod{#4}&#5\mod{#5}&#6\mod{#6} \\
+  \end{tabular}
+}
+
+\newcommand{\creatureName}[1]{{\huge \textrm{\textsc{#1}}}}
+\newcommand{\ability}[2]{{\bfseries{#1}} #2}
+\newcommand{\action}[3]{{\bfseries\itshape#1.} {\itshape{#2}} #3}
+
+%Attack types
+\newcommand{\mwa}{Melee Weapon Attack:}
+\newcommand{\rwa}{Ranged Weapon Attack:}
+\newcommand{\morwa}{Melee or Ranged Weapon Attack:}
+\newcommand{\msa}{Melee Spell Attack:}
+\newcommand{\rsa}{Ranged Spell Attack:}
+
+%To hit and reach/range
+\newcommand{\toH}[1]{{\bf{+#1}} to hit}
+\newcommand{\reach}[1]{reach #1 ft.}
+\newcommand{\rangeOne}[1]{range #1 ft.}
+\newcommand{\rangeTwo}[2]{range #1/#2 ft.}
+
+%calculate damage and hp based on dice and mods
+\newcommand{\hit}[3]{\settemp{#3}
+        \FPeval\result{trunc(#1*((#2+1)/2)+\tempval:0)}
+        \hspace{-8pt}\textbf{\result\hspace{3pt}(#1d#2\pmz{#3}\hspace{-2pt})}} 
+\newcommand{\hitpoints}[3]{\ability{Hit Points}{\hit{#1}{#2}{#3}}}
+\newcommand{\damage}[4]{{\emph{Hit:}}\hit{#1}{#2}{#3}\da{#4} damage.}
+
+\newcommand{\da}[1]{
+    \csname da#1\endcsname
+    }
+
+\newcommand{\daA}{acid }
+\newcommand{\daB}{bludgeoning }
+\newcommand{\daC}{cold }
+\newcommand{\daFi}{fire }
+\newcommand{\daFo}{force }
+\newcommand{\daL}{lightning }
+\newcommand{\daN}{necrotic }
+\newcommand{\daPie}{piercing }
+\newcommand{\daPoi}{poison }
+\newcommand{\daPsy}{psychic }
+\newcommand{\daR}{radiant }
+\newcommand{\daS}{slashing }
+\newcommand{\daT}{thunder }
