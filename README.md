@@ -143,7 +143,7 @@ Macros
    attack based on the dice rolled and modifiers added. For example, if an
    attack is listed as dealing "6d6 - 2 radiant" damage, use
 
-    \damage{5}{6}{-2}{R}
+    \damage{6}{6}{-2}{R}
 
    Output:
 
@@ -156,15 +156,15 @@ Macros
    damage type starts with a "P", write the first three letters of the damage
    type. Otherwise, only the first letter of the damage type is used.
 
-   Acid: " ""A"
+   Acid: "A"
 
-   Bludgeoning: " ""B"
+   Bludgeoning: "B"
 
-   Cold: " ""C"
+   Cold: "C"
 
-   Fire: " ""Fi"
+   Fire: "Fi"
 
-   Force: " ""Fo"
+   Force: "Fo"
 
    Lightning: "L"
 
