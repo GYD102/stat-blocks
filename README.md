@@ -182,6 +182,14 @@ Macros
 
    Thunder: "T"
 
+Planned Improvements
+--------------------
+* Macro / method to create spellcasting lists.
+
+* Python-based .tex generator
+
+* Improved sturcturing method
+
 Author & Contact
 ----------------
 Glib Dolotov (gyd102@gmail.com)
