@@ -46,7 +46,7 @@ Macros
    
     \stats{20}{15}{13}{11}{8}{10}
 
-   Ex. output:
+  Ex. output:
    
      STR  DEX  CON  INT  WIS  CHA
      (+5) (+2) (+1) (0)  (-1) (0)
@@ -79,8 +79,108 @@ Macros
 
 6) \toH{modifier}
 
-   
+   Shortcut to write "+mod to hit".
 
+  Ex. input
+
+    \toH{4}
+
+  Ex. output
+
+    +4 to hit
+
+7) \reach{distance}
+
+   Shortcut to write "reach distance ft."
+
+  Ex. input
+
+    \reach{10}
+
+  Ex. output
+
+    reach 10 ft.
+
+8) \rangeOne{distance}
+
+   Shortcut to write "range distance ft."
+
+  Ex. input
+
+    \rangeOne{100}
+
+  Ex. output
+
+    range 100 ft.
+
+9) \rangeTwo{short}{long}
+
+   Shortcut to write "range short/long ft."
+
+  Ex. input
+
+    \rangeTwo{150}{600}
+
+  Ex. output
+
+    range 150/600 ft.
+
+10)\hitpoints{number}{die}{modifier}
+
+   Writes a hit point maximum based on the number of dice, which die is used,
+   and the modifier. For example, if the Monster Manual™ lists a creatures hit
+   dice and modifier as being "2d12 + 4", use
+
+    \hitpoints{2}{12}{4}
+
+   Output:
+
+    Hit Points: 30 (2d12 + 4)
+
+11)\damage{number}{die}{modifier}{type abbreviation}
+
+   Writes an average and rolled damage dice along with a damage type delt by an
+   attack based on the dice rolled and modifiers added. For example, if an
+   attack is listed as dealing "6d6 - 2 radiant" damage, use
+
+    \damage{5}{6}{-2}{R}
+
+   Output:
+
+    26 (6d6 - 2) radiant damage.
+
+12)Damage type abbreviations
+
+   \damage command takes an abbreviation for damage type. If the damage type
+   starts with an "F", write the first two letters of the damage type. If the
+   damage type starts with a "P", write the first three letters of the damage
+   type. Otherwise, only the first letter of the damage type is used.
+
+   Acid: " ""A"
+
+   Bludgeoning: " ""B"
+
+   Cold: " ""C"
+
+   Fire: " ""Fi"
+
+   Force: " ""Fo"
+
+   Lightning: "L"
+
+   Necrotic: "N"
+
+   Piercing: "Pie"
+
+   Poison: "Poi"
+
+   Psychic: "Psy"
+
+   Radiant: "R"
+
+   Slashing: "S"
+
+   Thunder: "T"
 
 Author & Contact
 ----------------
