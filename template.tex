@@ -1,7 +1,7 @@
-%Appropriately arranges the document and the page, columns, and page color
-%I keep the text color black throughout the document black because I do not have
-%access to a color printer. If you do, feel free to modify the code to accurately
-%mimic the font colors used in the Monster Manual.
+% Appropriately arranges the document and the page, columns, and page color
+% I keep the text color black throughout the document black because I don't have
+% access to a color printer. If you do, feel free to modify the code to 
+% accurately mimic the font colors used in the Monster Manual.
 \documentclass{article}
 \usepackage[paperwidth=8.5in, paperheight=11in, textwidth=7.5in, textheight=10.5in]{geometry}
 
@@ -13,26 +13,26 @@
 
 \setlength\parindent{0pt}
 
-%Below lines import typeface used (most resembling) the typeface of the MM
+% Below lines import typeface used (most resembling) the typeface of the MM
 \usepackage{libertine}
 \renewcommand*\familydefault{\sfdefault}
 \usepackage[T1]{fontenc}
 
-%An import of all macros that are utilized to simplify the Stat-Block generating
-%process. Documentation available within.
+% An import of all macros that are utilized to simplify the Stat-Block generating
+% process. Documentation available within.
 \include{macros}
 
 
 \begin{document}
-%And so it begins...
+% And so it begins...
 \normalfont
 \normalsize
 \begin{multicols*}{2}
-%I suggest copy-pasting the stat-blocks from the 'STAT BLOCK START' to the
-%'STAT BLOCK FINISH' lines when using this template. The spacing is the most
-%difficult obstacle, I found. Copy and pasting allows the same conventions to
-%be observed. Feel free to experiment, however! 
-%STAT BLOCK START --------------------------------------------------------------
+% I suggest copy-pasting the stat-blocks from the 'STAT BLOCK START' to the
+% 'STAT BLOCK FINISH' lines when using this template. The spacing is the most
+% difficult obstacle, I found. Copy and pasting allows the same conventions to
+% be observed. Feel free to experiment, however! 
+% STAT BLOCK START -------------------------------------------------------------
 \creatureName{Hobgoblin}
 
 \textit{Medium humanoid (goblinoid), lawful evil}
@@ -40,20 +40,20 @@
 \rule{3.5in}{1mm}
 
 \ability{Armor Class}{18 (chain mail, shield)} \\
-%\hitpoints \damage and \hit macros allow for an accurate calculation (and
-%display) of the dice to roll and the expected values therein. More detailed
-%info in the macros.tex file. As an example, below:
-%The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
-%sides of the dice), and 2 (the external modifier) are provided, and the
-%expected value of 11 (what DnD5e uses for streamlining) is calculated)
+% \hitpoints \damage and \hit macros allow for an accurate calculation (and
+% display) of the dice to roll and the expected values therein. More detailed
+% info in the macros.tex file. As an example, below:
+% The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
+% sides of the dice), and 2 (the external modifier) are provided, and the
+% expected value of 11 (what DnD5e uses for streamlining) is calculated)
 \hitpoints{2}{8}{2}\\
 \ability{Speed}{30 ft.}
 
 \rule{3.5in}{1mm}
 
-%simply input the stat values (not modifiers) into the cooresponding slots and
-%the macro will calculate and produce a stat-table with appropriate modifiers.
-%They are to be entered in the following order: STR DEX CON INT WIS CHA.
+% simply input the stat values (not modifiers) into the cooresponding slots and
+% the macro will calculate and produce a stat-table with appropriate modifiers.
+% They are to be entered in the following order: STR DEX CON INT WIS CHA.
 \stats{13}{12}{12}{10}{10}{9}
 
 \rule{3.5in}{1mm}
@@ -78,15 +78,15 @@
 
 \action{Longsword}{\mwa}{\toH{3}, \reach{5}, one target. \damage{1}{8}{1}{S}}\\\\
 \action{Longbow}{\rwa}{\toH{3}, \rangeTwo{150}{600}, one target. \damage{1}{8}{1}{Pie}}
-%STAT BLOCK END   --------------------------------------------------------------
+% STAT BLOCK END   -------------------------------------------------------------
 \vfill
 \columnbreak
 %\\
 %\\
-%Above lines can be omitted if both statblocks fit on the same half of the page
-%In such a case, however, uncomment the line-breaks to provide some space
-%between the two stat-blocks.
-%STAT BLOCK START --------------------------------------------------------------
+% Above lines can be omitted if both statblocks fit on the same half of the page
+% In such a case, however, uncomment the line-breaks to provide some space
+% between the two stat-blocks.
+% STAT BLOCK START -------------------------------------------------------------
 \creatureName{Hobgoblin Captain}
 
 \textit{Medium humanoid (goblinoid), lawful evil}
@@ -121,14 +121,14 @@
 
 \rule{3.5in}{0.5pt}
 
-%The additional line-breaks are commented out in this section (but not the
-%previous one) in order to demonstrate both possibilities. The former more
-%accurately immitates the Monster Manual, the later allows for slightly more
-%compact stat-blocks.
+% The additional line-breaks are commented out in this section (but not the
+% previous one) in order to demonstrate both possibilities. The former more
+% accurately immitates the Monster Manual, the later allows for slightly more
+% compact stat-blocks.
 \action{Multiattack}{}{The hobgoblin makes two greatsword attacks.}\\%\\
 \action{Greatsword}{\mwa}{\toH{4}, \reach{5}, one target. \damage{2}{6}{2}{Pie}}\\%\\
 \action{Javelin}{\morwa}{\toH{4}, \reach{5} or \rangeTwo{30}{120}, one target. \damage{1}{6}{2}{Pie}}\\%\\
 \action{Leadership (Recharges after a Short or Long Rest)}{}{For 1 minute, the hobgoblin can utter a special command or warning whenever a nonhostile creature that it can see within 30 feet of it makes an attack roll or a saving throw. The creature can add a d4 to its roll provided it can hear and understand the hobgoblin. A creature can benefit from only one Leadership die at a time. This effect ends if the hobgoblin is incapacitated.}
-%STAT BLOCK END   --------------------------------------------------------------
+% STAT BLOCK END   -------------------------------------------------------------
 \end{multicols*}
 \end{document}
