@@ -42,10 +42,12 @@ Macros
 
    Takes 6 ability scores and generates an appropriate ability table.
 
-   Ex. input:
-     \stats{20}{15}{13}{11}{8}{10}
+  Ex. input:
+   
+    \stats{20}{15}{13}{11}{8}{10}
 
    Ex. output:
+   
      STR  DEX  CON  INT  WIS  CHA
      (+5) (+2) (+1) (0)  (-1) (0)
 
