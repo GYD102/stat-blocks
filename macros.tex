@@ -37,13 +37,6 @@
   \end{tabular}
 }
 
-% Formatting shortcuts, in order of appearance on a 5e stat-block
-\newcommand{\pushleft}[1]{
-        \begin{flushleft}
-        #1
-        \end{flushleft}
-}
-
 \newcommand{\creatureName}[1]{{\huge \textrm{\textsc{#1}}}}
 \newcommand{\attrib}[2]{{{\bfseries{#1}}\ #2}}
 \newcommand{\ability}[2]{{\bfseries\itshape#1.}\ #2}
@@ -76,7 +69,7 @@
 
 % Display the expected value and raw roll as a damage total
 % 4th input = damage type (first or first few letters; below for details)
-\newcommand{\damage}[4]{{\emph{Hit:}}\hit{#1}{#2}{#3}\da{#4} damage.}
+\newcommand{\damage}[4]{\hit{#1}{#2}{#3}\da{#4} damage}
 
 % Shortcut to display damage type
 % \da = 'damage'
