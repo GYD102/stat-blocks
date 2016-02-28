@@ -38,9 +38,16 @@
 }
 
 % Formatting shortcuts, in order of appearance on a 5e stat-block
+\newcommand{\pushleft}[1]{
+        \begin{flushleft}
+        #1
+        \end{flushleft}
+}
+
 \newcommand{\creatureName}[1]{{\huge \textrm{\textsc{#1}}}}
-\newcommand{\ability}[2]{{\bfseries{#1}} #2}
-\newcommand{\action}[3]{{\bfseries\itshape#1.} {\itshape{#2}} #3}
+\newcommand{\attrib}[2]{{{\bfseries{#1}}\ #2}}
+\newcommand{\ability}[2]{{\bfseries\itshape#1.}\ #2}
+\newcommand{\action}[3]{{\bfseries\itshape#1.}\ {\itshape{#2}}\ #3}
 
 % Attack type shortcuts
 \newcommand{\mwa}{Melee Weapon Attack:}
@@ -65,7 +72,7 @@
         \hspace{-8pt}\textbf{\result\hspace{3pt}(#1d#2\pmz{#3}\hspace{-2pt})}}
 
 % Display the expected value and raw roll as a Hit Point total
-\newcommand{\hitpoints}[3]{\ability{Hit Points}{\hit{#1}{#2}{#3}}}
+\newcommand{\hitpoints}[3]{\attrib{Hit Points}{\hit{#1}{#2}{#3}}}
 
 % Display the expected value and raw roll as a damage total
 % 4th input = damage type (first or first few letters; below for details)

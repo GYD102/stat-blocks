@@ -3,6 +3,7 @@
 % access to a color printer. If you do, feel free to modify the code to 
 % accurately mimic the font colors used in the Monster Manual.
 \documentclass{article}
+\usepackage{ragged2e}
 \usepackage[paperwidth=8.5in, paperheight=11in, textwidth=7.5in, textheight=10.5in]{geometry}
 
 \usepackage{multicol}
@@ -16,7 +17,7 @@
 % Below lines import typeface used (most resembling) the typeface of the MM
 \usepackage{libertine}
 \renewcommand*\familydefault{\sfdefault}
-\usepackage[T1]{fontenc}
+%\usepackage[T1]{fontenc}
 
 % An import of all macros that are utilized to simplify the Stat-Block generating
 % process. Documentation available within.
@@ -25,46 +26,57 @@
 
 \begin{document}
 % And so it begins...
-\normalfont
+%\normalfont
 \normalsize
 \begin{multicols*}{2}
+\RaggedRight
+%\raggedright
 % I suggest copy-pasting the stat-blocks from the 'STAT BLOCK START' to the
 % 'STAT BLOCK FINISH' lines when using this template. The spacing is the most
 % difficult obstacle, I found. Copy and pasting allows the same conventions to
 % be observed. Feel free to experiment, however! 
 % STAT BLOCK START -------------------------------------------------------------
-\creatureName{Hobgoblin}
+\creatureName{Drow}
 
-\textit{Medium humanoid (goblinoid), lawful evil}
+\textit{Medium humanoid (elf), neutral evil}
 
 \rule{3.5in}{1mm}
 
-\ability{Armor Class}{18 (chain mail, shield)} \\
+\attrib{Armor Class}{15 (chain shirt)}\\
 % \hitpoints \damage and \hit macros allow for an accurate calculation (and
 % display) of the dice to roll and the expected values therein. More detailed
 % info in the macros.tex file. As an example, below:
 % The below line will write '11 (2d8 + 2)'. The 2 (number of dice), 8 (number of
 % sides of the dice), and 2 (the external modifier) are provided, and the
 % expected value of 11 (what DnD5e uses for streamlining) is calculated)
-\hitpoints{2}{8}{2}\\
-\ability{Speed}{30 ft.}
+\hitpoints{3}{8}{0}\\
+\attrib{Speed}{30 ft.}
 
 \rule{3.5in}{1mm}
 
 % simply input the stat values (not modifiers) into the cooresponding slots and
 % the macro will calculate and produce a stat-table with appropriate modifiers.
 % They are to be entered in the following order: STR DEX CON INT WIS CHA.
-\stats{13}{12}{12}{10}{10}{9}
+\stats{10}{14}{10}{11}{11}{12}
 
 \rule{3.5in}{1mm}
 
-\ability{Senses}{darkvision 60 ft., passive Perception 10}\\
-\ability{Languages}{Common, Goblin}\\
-\ability{Challenge}{1/2 (100 XP)}
+\attrib{Skills}{Perception +2, Stealth +4}\\
+\attrib{Senses}{darkvision 120 ft., passive Perception 12}\\
+\attrib{Languages}{Elvish, Undercommon}\\
+\attrib{Challenge}{1/4 (50 XP)}
 
 \rule{3.5in}{1mm}
 
-\action{Martial Advantage}{}{Once per turn, the hobgoblin can deal an extra \hit{2}{6}{0} damage to a creature it hits with a weapon attack if that creature is within 5 feet of an ally of the hobgoblin that isn't incapacitated.}
+\ability{Fey Ancestry}{The drow has advantage on saving throws against being
+  charmed, and magic can't put the drow to sleep.}\\\bigskip
+\ability{Innate Spellcasting}{The drow's spellcasting ability is Charisma (spell
+  save DC 11). It can innately cast the following spells, requiring no material
+  components:}\\\bigskip
+At will: \textit{dancing lights}\\
+1/day each: \textit{darkness, faerie fire}\\\bigskip
+\ability{Sunlight Sensitivity}{While in sunlight, the drow has disadvantage on
+  attack rolls, as well as on Wisdom (Perception) checks that rely on sight.}
 
 \rule{3.5in}{1mm}
 
@@ -76,8 +88,14 @@
 
 \rule{3.5in}{0.5pt}
 
-\action{Longsword}{\mwa}{\toH{3}, \reach{5}, one target. \damage{1}{8}{1}{S}}\\\\
-\action{Longbow}{\rwa}{\toH{3}, \rangeTwo{150}{600}, one target. \damage{1}{8}{1}{Pie}}
+\action{Shortsword}{\mwa}{\toH{4}, \reach{5}, one target. 
+  \damage{1}{6}{2}{Pie}}\\\bigskip
+\action{Hand Crossbow}{\rwa}{\toH{4}, \rangeTwo{30}{120}, one target.
+  \damage{1}{6}{2}{Pie} and the target must succeed on a DC 13 Constitution
+  saving throw or be poisoned for 1 hour. If the saving throw fails by 5 or
+  more, the target is also unconscious while poisoned in this way. The target
+  wakes up if it takes damage or if another creature takes an action to wake it
+  up.}
 % STAT BLOCK END   -------------------------------------------------------------
 \vfill
 \columnbreak
@@ -93,9 +111,9 @@
 
 \rule{3.5in}{1mm}
 
-\ability{Armor Class}{17 (half plate)} \\
+\attrib{Armor Class}{17 (half plate)}\\
 \hitpoints{6}{8}{12}\\
-\ability{Speed}{30 ft.}
+\attrib{Speed}{30 ft.}
 
 \rule{3.5in}{1mm}
 
@@ -103,9 +121,9 @@
 
 \rule{3.5in}{1mm}
 
-\ability{Senses}{darkvision 60 ft., passive Perception 10}\\
-\ability{Languages}{Common, Goblin}\\
-\ability{Challenge}{3 (700 XP)}
+\attrib{Senses}{darkvision 60 ft., passive Perception 10}\\
+\attrib{Languages}{Common, Goblin}\\
+\attrib{Challenge}{3 (700 XP)}
 
 \rule{3.5in}{1mm}
 
